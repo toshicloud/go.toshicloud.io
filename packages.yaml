@@ -4,3 +4,6 @@ packages:
   cubby:
     repo: github.com/toshicloud/cubby
     description: A local cache for GitHub Actions, available as a Go library and server.
+  toshi:
+    repo: github.com/toshicloud/toshi-go
+    description: Go SDK for Toshi, generated from the core API.

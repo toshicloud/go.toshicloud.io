@@ -1,4 +1,4 @@
-// Copyright 2026 The cubby contributors
+// Copyright 2026 toshicloud
 // SPDX-License-Identifier: Apache-2.0
 
 // Serve the dark Go package directory and Go import discovery on go.toshicloud.io.

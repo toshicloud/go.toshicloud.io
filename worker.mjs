@@ -2,16 +2,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // Serve the dark Go package directory and Go import discovery on go.toshicloud.io.
-const hostname = "go.toshicloud.io";
-const packages = [
-  {
-    name: "cubby",
-    repository: "https://github.com/toshicloud/cubby",
-    documentation: "https://github.com/toshicloud/cubby/blob/feat/cache-server/README.md",
-    description: "A local cache for GitHub Actions, available as a Go library and server.",
-    prerelease: true,
-  },
-];
+import catalogue from "./.generated/catalogue.json" with { type: "json" };
+
+const { hostname, packages } = catalogue;
 
 function escapeHTML(value) {
   return value.replace(/[&<>"']/g, (character) => ({
@@ -24,7 +17,7 @@ function packageRows(pkg) {
     <tr class="package">
       <td data-label="Package"><a class="import-path" href="/${escapeHTML(pkg.name)}">${hostname}/${escapeHTML(pkg.name)}</a>${pkg.prerelease ? '<span class="status">pre-release</span>' : ""}</td>
       <td data-label="Source"><a href="${escapeHTML(pkg.repository)}">${escapeHTML(pkg.repository.replace("https://", ""))}</a></td>
-      <td data-label="Documentation"><a class="docs" href="${escapeHTML(pkg.documentation)}"><span class="docs-type">Go</span><span class="docs-label">README</span></a></td>
+      <td data-label="Documentation"><a class="docs" href="${escapeHTML(pkg.documentation)}"><span class="docs-type">Go</span><span class="docs-label">${escapeHTML(pkg.documentationLabel)}</span></a></td>
     </tr>
     <tr class="description"><td colspan="3">${escapeHTML(pkg.description)}</td></tr>
   </tbody>`;
@@ -37,7 +30,7 @@ const index = `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="Go packages from Toshi, with source code and documentation.">
-  <title>go.toshicloud.io</title>
+  <title>${escapeHTML(hostname)}</title>
   <style>
     :root {
       color-scheme: dark;
@@ -111,7 +104,7 @@ const index = `<!doctype html>
       <thead><tr><th scope="col">Package</th><th scope="col">Source</th><th scope="col">Documentation</th></tr></thead>
       ${packages.map(packageRows).join("\n")}
     </table>
-    <footer><span>go.toshicloud.io</span><a href="https://github.com/toshicloud/go.toshicloud.io">Source for this site</a></footer>
+    <footer><span>${escapeHTML(hostname)}</span><a href="https://github.com/toshicloud/go.toshicloud.io">Source for this site</a></footer>
   </main>
 </body>
 </html>`;

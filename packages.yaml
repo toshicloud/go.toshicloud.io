@@ -1,0 +1,9 @@
+# Package catalogue for go.toshicloud.io; build.mjs validates it and emits .generated/catalogue.json.
+url: go.toshicloud.io
+packages:
+  cubby:
+    repo: github.com/toshicloud/cubby
+    description: A local cache for GitHub Actions, available as a Go library and server.
+    documentation: https://github.com/toshicloud/cubby/blob/feat/cache-server/README.md
+    documentationLabel: README
+    prerelease: true

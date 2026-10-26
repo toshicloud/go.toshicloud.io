@@ -7,3 +7,6 @@ packages:
   toshi:
     repo: github.com/toshicloud/toshi-go
     description: Go SDK for Toshi, generated from the core API.
+  api:
+    repo: github.com/toshicloud/toshi-api
+    description: "The Toshi API: protocol definitions and generated clients for the workspace, operator and GitHub services"

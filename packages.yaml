@@ -4,6 +4,3 @@ packages:
   cubby:
     repo: github.com/toshicloud/cubby
     description: A local cache for GitHub Actions, available as a Go library and server.
-    documentation: https://github.com/toshicloud/cubby/blob/feat/cache-server/README.md
-    documentationLabel: README
-    prerelease: true

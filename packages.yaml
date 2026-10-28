@@ -13,3 +13,6 @@ packages:
   provider:
     repo: github.com/toshicloud/toshi-provider
     description: The contract every Toshi VM provider implements, with its conformance suite.
+  product:
+    repo: github.com/toshicloud/toshi-product
+    description: The contract a Toshi product is built against, with its conformance suite.

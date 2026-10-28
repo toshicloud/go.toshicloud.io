@@ -10,3 +10,6 @@ packages:
   api:
     repo: github.com/toshicloud/toshi-api
     description: "The Toshi API: protocol definitions and generated clients for the workspace, operator and GitHub services"
+  provider:
+    repo: github.com/toshicloud/toshi-provider
+    description: The contract every Toshi VM provider implements, with its conformance suite.

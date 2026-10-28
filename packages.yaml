@@ -16,3 +16,6 @@ packages:
   product:
     repo: github.com/toshicloud/toshi-product
     description: The contract a Toshi product is built against, with its conformance suite.
+  backend:
+    repo: github.com/toshicloud/toshi-backend
+    description: The contracts Toshi object storage, launcher and key provider backends are built against.
